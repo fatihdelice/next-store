@@ -1,0 +1,22 @@
+{
+    "global.header.allProducts": "All Products",
+    "global.header.apparel": "Apparel",
+    "global.header.accessories": "Accessories",
+    "global.header.searchPlaceholder": "Search for products...",
+    "global.home.opportunityProducts": "Opportunity Products",
+    "global.home.campaigns": "Campaigns",
+    "global.footer.shop": "Shop",
+    "global.footer.help": "Help",
+    "global.footer.electronics": "Electronics",
+    "global.footer.newArrivals": "New Arrivals",
+    "global.footer.aboutUs": "About Us",
+    "global.footer.externalLink": "External Link",
+    "global.footer.faq": "FAQ",
+    "global.footer.support": "Support",
+    "global.footer.changeLanguage": "Change language:",
+    "global.notFound.title": "404 - Page Not Found",
+    "global.notFound.description": "Sorry, the page you're looking for doesn't exist. Please try again.",
+    "global.language.tr": "Turkish",
+    "global.language.en": "English",
+    "global.error.loadingProducts": "An error occurred while loading the products."
+}

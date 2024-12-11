@@ -25,6 +25,8 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ```bash
 node server.js
+# or
+npm run server
 ```
 
 ## Learn More

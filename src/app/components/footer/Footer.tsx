@@ -1,42 +1,39 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useProperties } from "@/hooks/useProperties";
 
 const fakeMenuData = {
     menu: {
         items: [
             {
                 id: "1",
-                name: "Shop",
+                name: "global.footer.shop",
                 children: [
-                    { id: "1a", category: { slug: "electronics", name: "Electronics" } },
-                    { id: "1b", collection: { slug: "new-arrivals", name: "New Arrivals" } },
-                    { id: "1c", page: { slug: "about-us", title: "About Us" } },
-                    { id: "1d", url: "https://example.com", name: "External Link" }
+                    { id: "1a", category: { slug: "electronics", name: "global.footer.electronics" } },
+                    { id: "1b", collection: { slug: "new-arrivals", name: "global.footer.newArrivals" } },
+                    { id: "1c", page: { slug: "about-us", title: "global.footer.aboutUs" } },
+                    { id: "1d", url: "https://example.com", name: "global.footer.externalLink" }
                 ]
             },
             {
                 id: "2",
-                name: "Help",
+                name: "global.footer.help",
                 children: [
-                    { id: "2a", page: { slug: "faq", title: "FAQ" } },
-                    { id: "2b", url: "https://support.example.com", name: "Support" }
+                    { id: "2a", page: { slug: "faq", title: "global.footer.faq" } },
+                    { id: "2b", url: "https://support.example.com", name: "global.footer.support" }
                 ]
             }
         ]
     }
 };
 
-const fakeChannelsData = {
-    channels: [
-        { id: "1", name: "USD" },
-        { id: "2", name: "EUR" },
-        { id: "3", name: "GBP" }
-    ]
-};
+export function Footer() {
+    const { t } = useProperties();
 
-export async function Footer() {
     const footerLinks = fakeMenuData;
-    const channels = fakeChannelsData;
 
     const currentYear = new Date().getFullYear();
 
@@ -47,14 +44,14 @@ export async function Footer() {
                     {footerLinks.menu?.items?.map((item) => {
                         return (
                             <div key={item.id}>
-                                <h3 className="text-sm font-semibold text-neutral-900">{item.name}</h3>
+                                <h3 className="text-sm font-semibold text-neutral-900">{t(item.name)}</h3>
                                 <ul className="mt-4 space-y-4 [&>li]:text-neutral-500">
                                     {item.children?.map((child) => {
                                         if (child.category) {
                                             return (
                                                 <li key={child.id} className="text-sm">
                                                     <Link href={`/categories/${child.category.slug}`}>
-                                                        {child.category.name}
+                                                        {t(child.category.name)}
                                                     </Link>
                                                 </li>
                                             );
@@ -63,7 +60,7 @@ export async function Footer() {
                                             return (
                                                 <li key={child.id} className="text-sm">
                                                     <Link href={`/collections/${child.collection.slug}`}>
-                                                        {child.collection.name}
+                                                        {t(child.collection.name)}
                                                     </Link>
                                                 </li>
                                             );
@@ -72,7 +69,7 @@ export async function Footer() {
                                             return (
                                                 <li key={child.id} className="text-sm">
                                                     <Link href={`/pages/${child.page.slug}`}>
-                                                        {child.page.title}
+                                                        {t(child.page.title)}
                                                     </Link>
                                                 </li>
                                             );
@@ -80,7 +77,7 @@ export async function Footer() {
                                         if (child.url) {
                                             return (
                                                 <li key={child.id} className="text-sm">
-                                                    <Link href={child.url}>{child.name}</Link>
+                                                    <Link href={child.url}>{t(child.name)}</Link>
                                                 </li>
                                             );
                                         }
@@ -92,20 +89,7 @@ export async function Footer() {
                     })}
                 </div>
 
-                {channels?.channels && (
-                    <div className="mb-4 text-neutral-500">
-                        <label>
-                            <span className="text-sm">Change currency:</span>
-                            <select className="ml-2 text-sm">
-                                {channels.channels.map((channel) => (
-                                    <option key={channel.id} value={channel.name}>
-                                        {channel.name}
-                                    </option>
-                                ))}
-                            </select>
-                        </label>
-                    </div>
-                )}
+                <LanguageSwitcher />
 
                 <div className="flex flex-col justify-between border-t border-neutral-200 py-10 sm:flex-row">
                     <p className="text-sm text-neutral-500">Copyright &copy; {currentYear} Next Store, Inc.</p>

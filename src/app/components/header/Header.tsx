@@ -1,20 +1,24 @@
+"use client";
+
 import React from 'react'
+import { useProperties } from '@/hooks/useProperties';
 
 export default function Header() {
+    const { t } = useProperties();
     return (
         <div className="mx-auto max-w-7xl px-3 sm:px-8">
             <div className="flex h-16 justify-between gap-4 md:gap-8">
                 <div className="flex items-center font-bold"><a aria-label="homepage" href="/">NextStore</a></div>
                 <nav className="flex w-full gap-4 lg:gap-6" aria-label="Main navigation">
                     <ul className="hidden gap-4 overflow-x-auto whitespace-nowrap md:flex lg:gap-8 lg:px-0">
-                        <li className="inline-flex"><a className="border-transparent text-neutral-500 inline-flex items-center border-b-2 pt-px text-sm font-medium hover:text-neutral-700" href="/products">All Products</a></li>
-                        <li className="inline-flex"><a className="border-transparent text-neutral-500 inline-flex items-center border-b-2 pt-px text-sm font-medium hover:text-neutral-700" href="/categories/apparel">Apparel</a></li>
-                        <li className="inline-flex"><a className="border-transparent text-neutral-500 inline-flex items-center border-b-2 pt-px text-sm font-medium hover:text-neutral-700" href="/categories/accessories">Accessories</a></li>
+                        <li className="inline-flex"><a className="border-transparent text-neutral-500 inline-flex items-center border-b-2 pt-px text-sm font-medium hover:text-neutral-700" href="/products">{t('global.header.allProducts')}</a></li>
+                        <li className="inline-flex"><a className="border-transparent text-neutral-500 inline-flex items-center border-b-2 pt-px text-sm font-medium hover:text-neutral-700" href="/categories/apparel">{t('global.header.apparel')}</a></li>
+                        <li className="inline-flex"><a className="border-transparent text-neutral-500 inline-flex items-center border-b-2 pt-px text-sm font-medium hover:text-neutral-700" href="/categories/accessories">{t('global.header.accessories')}</a></li>
                     </ul>
                     <div className="ml-auto flex items-center justify-center gap-4 whitespace-nowrap lg:gap-8">
                         <div className="hidden lg:flex">
                             <form action="javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')" className="group relative my-2 flex w-full items-center justify-items-center text-sm lg:w-80">
-                                <label className="w-full"><span className="sr-only">search for products</span><input placeholder="Search for products..." autoComplete="on" required={true} className="h-10 w-full rounded-md border border-neutral-300 bg-transparent bg-white px-4 py-2 pr-10 text-sm text-black placeholder:text-neutral-500 focus:border-black focus:ring-black" type="text" name="search"/></label>
+                                <label className="w-full"><span className="sr-only">search for products</span><input placeholder={t('global.header.searchPlaceholder')} autoComplete="on" required={true} className="h-10 w-full rounded-md border border-neutral-300 bg-transparent bg-white px-4 py-2 pr-10 text-sm text-black placeholder:text-neutral-500 focus:border-black focus:ring-black" type="text" name="search"/></label>
                                 <div className="absolute inset-y-0 right-0">
                                     <button type="submit" className="inline-flex aspect-square w-10 items-center justify-center text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 group-invalid:pointer-events-none group-invalid:opacity-80">
                                         <span className="sr-only">search</span>

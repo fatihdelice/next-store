@@ -1,8 +1,12 @@
+"use client";
+
+import { useProperties } from '@/hooks/useProperties';
 const NotFound = () => {
+  const { t } = useProperties();
     return (
       <div>
-        <h1>404 - Sayfa Bulunamadı</h1>
-        <p>Aradığınız sayfa mevcut değil.</p>
+        <h1>{t('global.notFound.title')}</h1>
+        <p>{t('global.notFound.description')}</p>
       </div>
     );
   };

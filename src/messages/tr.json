@@ -1,0 +1,22 @@
+{
+    "global.header.allProducts": "Tüm Ürünler",
+    "global.header.apparel": "Giyim",
+    "global.header.accessories": "Aksesuarlar",
+    "global.header.searchPlaceholder": "Ürünleri arayın...",
+    "global.home.opportunityProducts": "Fırsat Ürünleri",
+    "global.home.campaigns": "Kampanyalar",
+    "global.footer.shop": "Mağaza",
+    "global.footer.help": "Yardım",
+    "global.footer.electronics": "Elektronik",
+    "global.footer.newArrivals": "Yeni Gelenler",
+    "global.footer.aboutUs": "Hakkımızda",
+    "global.footer.externalLink": "Harici Bağlantı",
+    "global.footer.faq": "SSS",
+    "global.footer.support": "Destek",
+    "global.footer.changeLanguage": "Dili değiştir:",
+    "global.notFound.title:": "404 - Sayfa Bulunamadı",
+    "global.notFound.description:": "Üzgünüz, aradığınız sayfa mevcut değil. Lütfen tekrar deneyin.",
+    "global.language.tr": "Türkçe",
+    "global.language.en": "İngilizce",
+    "global.error.loadingProducts": "Ürünler yüklenirken bir hata oluştu."
+}
